@@ -1,0 +1,27 @@
+﻿@model Customers
+
+@if (ViewBag.Errors != null)
+{
+    <div class="text-red ml">
+        <ul>
+            @foreach (string error in ViewBag.Errors)
+            {
+                <li class="ml">@error</li>
+            }
+        </ul>
+    </div>
+}
+<form method="post" style="max-width: 400px; margin: 20px auto; padding: 20px; border: 1px solid #ccc; border-radius: 8px; background-color: #f9f9f9;">
+    <label asp-for="Name" style="display: block; margin-bottom: 8px; font-weight: bold;">Name</label>
+    <input asp-for="Name" style="width: 100%; padding: 8px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px;">
+
+    <div class="form-group">
+        <label asp-for="MembershiptypesId" class="control-label" style="display: block; margin-bottom: 8px; font-weight: bold;">Membership Name</label>
+
+        <select asp-for="MembershiptypesId" class="form-control" asp-items="ViewBag.MembershipTypes" style="width: 100%; padding: 8px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px;"></select>
+
+        <span asp-validation-for="MembershiptypesId" class="text-red" style="color: red; font-size: 14px; margin-top: 5px; display: block;"></span>
+    </div>
+
+    <button type="submit" style="background-color: #007bff; color: white; padding: 10px 15px; border: none; border-radius: 4px; cursor: pointer; font-size: 16px;">Create</button>
+</form>

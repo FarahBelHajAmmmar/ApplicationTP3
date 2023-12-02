@@ -1,0 +1,36 @@
+﻿@model CustomerDetailsViewMode
+<h1>Details Customer</h1>
+
+
+<table>
+    <tr>
+        <td><h3>Name:</h3></td>
+        <td><h4>@Model.Name</h4></td>
+    </tr>
+    <tr>
+        <td><h3>Membership Type:</h3></td>
+        <td><h4>@Model.MembershiptypesId</h4></td>
+    </tr>
+    <tr>
+        <td><h3>SignUp Fee:</h3></td>
+        <td><h4>@Model.Signupfee</h4></td>
+    </tr>
+    <tr>
+        <td><h3>Duration In Month:</h3></td>
+        <td><h4>@Model.DurationInMonth</h4></td>
+    </tr>
+    <tr>
+        <td><h3>Discount Rate:</h3></td>
+        <td><h4>@Model.DiscountRate</h4></td>
+    </tr>
+</table>
+
+<a asp-controller="Customer" asp-action="Index">Back to List</a>
+
+	
+	
+
+
+			
+		
+	

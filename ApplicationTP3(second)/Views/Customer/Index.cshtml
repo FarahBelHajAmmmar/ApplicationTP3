@@ -1,0 +1,25 @@
+﻿@model List<ApplicationTP3_second_.Models.CustomerViewModel>
+<a href="@Url.Action("Create", "Customer")" style="text-decoration: none; padding: 5px 10px; border-radius: 3px; background-color: #ff9800; color: white; display: inline-block; margin-bottom: 10px;">Create New</a>
+<table style="width:100%; border-collapse: collapse; margin-bottom: 20px;">
+    <thead>
+        <tr style="background-color: #f2f2f2;">
+            <th style="border: 1px solid #ddd; padding: 8px;">Name</th>
+            <th style="border: 1px solid #ddd; padding: 8px;">DiscountRate</th>
+            <th style="border: 1px solid #ddd; padding: 8px;">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var obj in Model)
+        {
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 8px;">@obj.Name</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">@obj.DiscountRate</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">
+                    <a href="@Url.Action("Edit", "Customer", new { id = obj.Id })" style="text-decoration: none; padding: 5px 10px; border-radius: 3px; background-color: #4CAF50; color: white;">Edit</a>
+                    <a href="@Url.Action("Delete", "Customer", new { id = obj.Id })" style="text-decoration: none; padding: 5px 10px; border-radius: 3px; background-color: #f44336; color: white;">Delete</a>
+                    <a href="@Url.Action("Details", "Customer", new { id = obj.Id })" style="text-decoration: none; padding: 5px 10px; border-radius: 3px; background-color: #2196F3; color: white;">Details</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

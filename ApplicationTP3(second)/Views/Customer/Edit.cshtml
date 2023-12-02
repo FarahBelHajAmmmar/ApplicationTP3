@@ -1,0 +1,16 @@
+﻿@model CustomerViewModel
+
+
+<form method="post" style="max-width: 400px; margin: 20px auto; padding: 20px; border: 1px solid #ccc; border-radius: 8px; background-color: #f9f9f9;">
+    <h1 style="text-align: center;">Edit Customer</h1>
+
+    <label asp-for="Name" style="display: block; margin-bottom: 8px;">Name</label>
+    <input asp-for="Name" style="width: calc(100% - 18px); padding: 8px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px;">
+
+    <label asp-for="DiscountRate" style="display: block; margin-bottom: 8px;">DiscountRate</label>
+    <input asp-for="DiscountRate" style="width: calc(100% - 18px); padding: 8px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px;">
+
+    <button type="submit" style="background-color: #007bff; color: white; padding: 10px 15px; border: none; border-radius: 4px; cursor: pointer; font-size: 16px;">Update</button>
+
+    <a asp-controller="Customer" asp-action="Index" style="display: block; margin-top: 10px; text-decoration: none; color: #007bff;">Back to List</a>
+</form>

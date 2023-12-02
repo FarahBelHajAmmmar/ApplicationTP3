@@ -1,0 +1,54 @@
+﻿@model ApplicationTP3_second_.Models.Movies
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Add New Movies</h1>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-6">
+
+        <form enctype="multipart/form-data" asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="DateAdded" class="control-label"></label>
+                <input asp-for="DateAdded" class="form-control" />
+                <span asp-validation-for="DateAdded" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="FrontImage" class="control-label">Image</label>
+                <div class="custom-file">
+                    <input asp-for="FrontImage" class="custom-file-input" id="FlFrontImage" />
+                    <label class="custom-file-label" for="FlFrontImage">Choose File</label>
+                </div>
+                <span asp-validation-for="FrontImage" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div style="margin-top: 20px;">
+
+    <a asp-action="Index">Back to List</a>
+</div>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

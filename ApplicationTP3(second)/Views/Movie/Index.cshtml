@@ -1,0 +1,49 @@
+﻿@model IList<Movies>
+
+<a asp-controller="Movie" asp-action="Create" class="btn btn-primary">Ajouter un nouveau film</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Movie Name
+            </th>
+            <th>
+                Date Added
+            </th>
+            <th>
+                Image
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var obj in Model)
+        {
+            <tr>
+                <td>
+                    @obj.Name
+                </td>
+                <td>
+                    @obj.DateAdded
+                </td>
+                <td>
+                    @if (!string.IsNullOrEmpty(obj.ImageURL))
+                    {
+                        <img src="/@obj.ImageURL" alt="Image" style="max-width: 100px; max-height: 100px;" />
+                    }
+                    else
+                    {
+                        <p>No Image Available</p>
+                    }
+
+                    
+                </td>
+                <td>
+                    @obj.ImageURL
+                </td>
+            </tr>
+
+        }
+    </tbody>
+</table>
